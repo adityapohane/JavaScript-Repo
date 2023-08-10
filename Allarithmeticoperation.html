@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Arithmetic Operation</title>
+ 
+</head>
+<body>
+<form action="">
+
+    <table style="background-color:seagreen; color: white; padding: 50px;" height="400px" align="center" >
+        <tr>
+            <td>
+                <label for="input">First number</label>
+                <input type="text" id="firstno" size="35" >
+            </td>
+        </tr>
+        <tr>
+           <td>
+               <label for="input">second number</label>
+               <input type="text" id="Secondno" size="35" >
+            </td>
+        </tr>
+       <tr>
+        <td>
+            <button type="button" onclick="Operate()">calculate</button>
+        </td>
+       </tr>
+        <tr>
+            <td>
+                <p id="add">Addition:</p>
+                <p id="sub">Subtraction:</p>
+                <p id="multi">Multiplication:</p>
+                <p id="div">division:</p>
+                
+                
+              
+            </td>
+        </tr>
+    </table>
+</form>
+
+
+<script>
+  
+   function Operate(){
+
+    var fn=parseInt(document.getElementById('firstno').value);
+    var sn=parseInt(document.getElementById('Secondno').value);
+    var aa=fn+sn;
+    var ss=fn-sn;
+    var mm=fn*sn;
+    var dd=fn/sn;
+
+    console.log(fn,sn)
+    document.getElementById('add').innerHTML=aa;
+    document.getElementById('sub').innerHTML="Subtraction:"+ss;
+    document.getElementById('multi').innerHTML="Multiplication:"+mm;
+    document.getElementById('div').innerHTML="Division:"+dd;
+   }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,319 @@
+     <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>validation</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    
+    
+    </head>
+    <body>
+    
+    <div class="container border-1 text-dark bg-primary-subtle w-50">
+    
+    <form action="">
+        
+           <br>
+        <div class="row">
+            <div class="col-12">
+                <label for="">Name:</label>
+                <input class="form-control border-dark" oninput="clearval()"  type="text" id="name">
+             <p id="nameerror" class="text-danger"></p>
+            </div>   
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-12">
+                <label for="">Email:</label>
+                <input class="form-control border-dark" oninput="clearval()" type="text" id="email"> 
+                <p id="emailerror" class="text-danger"></p>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-12">
+                <label for="">Address :</label>
+                <input class="form-control border-dark" oninput="clearval()" type="text" id="address"> 
+                <p id="adderror" class="text-danger"></p>
+            </div>
+        </div>
+       <br>
+        <div class="row">
+            <div class="col-6" >
+                <label for="">Gender:</label>
+                <input class="form-check-input border-dark"   type="radio" value="" checked id="0" name="gender">
+                <label for="">none</label>
+                <input class="form-check-input border-dark" oninput="clearval()" type="radio" value="Male" id="1" name=" ">
+                <label for="">Male</label>
+                <input class="form-check-input border-dark" oninput="clearval()" type="radio" value="Female" id="2" name="gender">
+                <label for="">Female</label>
+                <input class="form-check-input border-dark" oninput="clearval()" type="radio" value="Other" id="3" name="gender">
+                <label for="">Other</label>
+                <p id="generror" class="text-danger"></p>
+            </div>
+            <div class="col-6">
+                <label for="">DOB :</label> 
+        <input min="20-10-1950" max="20-02-2022" class="form-control border-dark" id="dateofb" oninput="clearval()" type="date"> <br> 
+        <p id="doberror" class="text-danger"></p>
+            </div>
+        </div>
+       <br>
+        <div class="row">
+            <div class="col-6">
+                <label for="">Profile :</label>
+                 <input class="form-control border-dark" id="profile" oninput="clearval()" value="1" type="file"> <br> 
+                 <p class="text-danger" id="prferror"></p>
+            </div>
+            <div class="col-6">
+                <label for="">Phone Number</label>
+                <input type="text" class="form-control border-dark" oninput="clearval()" id="phone">
+                <p id="phnerror" class="text-danger"></p>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-6">
+                <label for="">Password :</label> 
+                <input class="form-control border-dark" id="password" oninput="clearval()"  type="password"> 
+                <input type="checkbox" onclick="handelclick()" > show password 
+                <p id="passerror" class="text-danger"></p>
+            </div>
+            <div class="col-6">
+                <label for="">Confirm Password</label>
+                <input type="password" class="form-control border-dark" oninput="clearval()" id="confirmpass">
+                <p id="cpasserror" class="text-danger"></p>
+            </div>
+        </div>
+
+        
+        
+        <button class="btn btn-danger" type="button" onclick=" validation()">Register</button>
+    
+        <br><br><br><br><br>
+    </form>
+    
+</div>
+        
+        
+
+
+     
+
+    <script lang="JavaScript">
+      
+        
+        function validation(){
+
+            var name=document.getElementById('name').value;
+            var email=document.getElementById('email').value;
+            var address=document.getElementById('address').value;
+            var dob= document.getElementById('dateofb').value;
+            var gen=document.getElementsByName('gender').value
+            var  prf=document.getElementById('profile').value;
+            var phn= document.getElementById('phone').value;
+            var pass= document.getElementById('password').value;
+            var cpass= document.getElementById('confirmpass').value;
+               
+            var getSelectedValue = document.querySelector('input[name="gender"]:checked'); 
+            console.log(getSelectedValue.value)
+            
+          
+          
+
+            if(name=="")
+            {
+                document.getElementById('nameerror').innerHTML="Name Cannot be empty"
+                return false;
+
+            }
+         
+           
+            if(email=="")
+            {
+                document.getElementById('emailerror').innerHTML="email is empty"
+                return false;
+
+            }
+            
+
+            if(email.indexOf("@")<=0){
+                document.getElementById('emailerror').innerHTML="email should contain @ "
+                return false;
+            }
+            if(email.indexOf(".")<=-1){
+                document.getElementById('emailerror').innerHTML="email should contain ."
+                return false;
+            }
+
+            if(address=="")
+            {
+                document.getElementById('adderror').innerHTML="Address is needed"
+                return false;
+
+            }
+
+            if(getSelectedValue.value=="")
+            {
+                document.getElementById('generror').innerHTML="Select Gender !"
+                return false;
+
+
+            }
+            
+            if(dob=="")
+            {
+                document.getElementById('doberror').innerHTML="Choose Birthdate"
+                return false;
+
+            }
+            if(prf=="")
+            {
+                document.getElementById('prferror').innerHTML="Upload Profile!"
+                return false;
+
+            }
+            if(phn=="")
+            {
+                document.getElementById('phnerror').innerHTML="Enter Numbers!"
+                return false;
+            }
+           
+      
+            if(pass=="")
+            {
+                document.getElementById('passerror').innerHTML="Enter password!"
+                return false;
+
+            }
+            if(cpass=="")
+            {
+                document.getElementById('cpasserror').innerHTML="Confirm Password!"
+                return false;
+
+            }
+            if(pass==cpass){
+                document.getElementById('cpasserror').innerHTML=" Password  matched"
+                document.getElementById('passerror').innerHTML=" Password  matched"
+                return false;
+
+            }
+            if(pass!=cpass){
+                document.getElementById('cpasserror').innerHTML=" Password not matched"
+                document.getElementById('passerror').innerHTML=" Password not matched"
+                return false;
+
+            }
+
+
+    }
+
+    function handelclick(){
+            var pass= document.getElementById('password');
+                
+            if(pass.type==="password"){
+                pass.type="text";
+            }
+            else{
+                pass.type="password";   
+            }
+
+        }
+          
+
+
+            function clearval(){
+                var getSelectedValue = document.querySelector('input[name="gender"]:checked'); 
+               
+
+                var name=document.getElementById('name').value;
+                var nameval=/^[A-Za-z ]+$/;
+                var prf=document.getElementById('profile').value.toString();
+                var phn= document.getElementById('phone').value;
+                 var pass= document.getElementById('password').value;
+            var cpass= document.getElementById('confirmpass').value;
+
+                
+                if(name!="")
+            {
+                document.getElementById('nameerror').innerHTML=""
+             
+
+            }
+
+            if(!(name.match(nameval))){
+                document.getElementById('nameerror').innerHTML="Enter charcter only!";
+                return false;
+            }
+
+            if(email!="")
+            {
+                document.getElementById('emailerror').innerHTML=""
+             
+
+            }
+            if(address!="")
+            {
+                document.getElementById('adderror').innerHTML=""
+             
+
+            }
+            if(getSelectedValue.value!="")
+            {
+                document.getElementById('generror').innerHTML=""
+               
+
+
+            }
+         
+            if(dob!="")
+            {
+                var dob= document.getElementById('dateofb').value
+                document.getElementById('doberror').innerHTML=""
+             
+
+            }
+            if(prf!="")
+            {
+                
+                document.getElementById('prferror').innerHTML=""
+                console.log(prf)
+
+
+            }
+            if(phn!="")
+            {
+                document.getElementById('phnerror').innerHTML=""
+
+            }
+            if(isNaN(phn)){
+                document.getElementById('phnerror').innerHTML="Enter Numeric Character!";
+                return false;
+            }
+            if(pass!="")
+            {
+                document.getElementById('passerror').innerHTML=""
+               
+
+            }
+            if(cpass!="")
+            {
+                document.getElementById('cpasserror').innerHTML=""
+               
+
+            }
+    
+        }
+
+ 
+         
+
+                    
+        </script>
+    </body>
+    </html>   
+
+
+  
+    

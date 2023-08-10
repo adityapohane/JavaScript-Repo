@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background change </title>
+</head>
+<body>
+    <input type="radio" id="red" value="red" name="col" >
+    <label for="">Red</label>
+    <input type="radio" id="Green" value="Green" name="col">
+    <label for="">Green</label>
+    <input type="radio" id="Orange" value="Orange" name="col">
+    <label for="">Orange</label>
+    <input type="radio" id="Blue" value="Blue" name="col">
+    <label for="">Blue</label>
+    <input type="radio" id="White" value="White" name="col">
+    <label for="">White</label>
+
+
+    <h1 id="head">colorname</h1>
+
+ 
+
+</body>
+
+<script >
+    let color=document.getElementsByName('col');
+   
+
+
+    document.addEventListener("click",()=>{
+
+        let getSelectedValue = document.querySelector('input[name="col"]:checked'); 
+        console.log(getSelectedValue);
+       
+    
+    if(getSelectedValue != null) {   
+        document.getElementById("head").innerHTML= getSelectedValue.value;   
+        console.log(getSelectedValue.id)
+
+
+        document.body.style.background=getSelectedValue.value 
+     
+    }
+    })
+        
+  
+</script>
+</html>

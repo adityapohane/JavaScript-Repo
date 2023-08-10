@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marksheet</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body class="bg-dark text-white mx-auto text-center">
+    <span><label for="example" class="form-label"></label></span>
+    <select  id="details"  class="form-control w-25 bg-danger "  onclick="handleclick()">
+        <option value="">select rollno</option>
+        <option value="01">01</option>
+        <option value="02">02</option>
+        <option value="03">03</option>
+    </select><br>
+    <div class="container-fluid border" id="maincontainer" hidden>
+      <div class="row">
+        <div class="col-4">
+            <h5>Profile</h5>
+            <img alt="" id="Profile" height="200px" width="200px">
+        </div>
+        <div class="col-2">
+            <h5>Name</h5>
+            <h4 id="name" class="mt-4">Aditya Pohane</h4>
+        </div>
+        <div class="col-3">
+            <h5>Rollno</h5>
+            <h4 id="rn" class="mt-4">01</h4>
+        </div>
+        <div class="col-3">
+            <h5>DOB</h5>
+            <h4 id="dob" class="mt-4">11/02/2000</h4>
+
+        </div>
+      </div>
+      <br><br><br>
+      <div class="row">
+        <div class="col-3">
+            <label for="">English</label><br>
+            <input type="text" id="eng" class="w-100">
+        </div>
+        <div class="col-2">
+            <label for="">Physics</label><br>
+            <input type="text" id="phy" class="w-100">
+        </div>
+        <div class="col-2">
+            <label for="">Chemistry</label><br>
+            <input type="text" id="chem" class="w-100">
+        </div>
+        <div class="col-2">
+            <label for="">Maths</label><br>
+            <input type="text" id="maths" class="w-100">
+        </div>
+        <div class="col-3">
+            <label for="">Biology</label><br>   
+            <input type="text" id="bio" class="w-100" oninput="mychange()">
+        </div>
+      </div>
+      <br><br>  
+      <div class="row">
+        <button class="btn btn-danger text-center mx-auto w-50" id="lastbtn" onclick="Calculate()" hidden>Calculate</button>
+      </div>
+     <br> 
+    </div>
+
+
+<br><br><br><br>
+
+<!-- On cells (`td` or `th`) -->
+<table class="table border text-white w-50 text-center mx-auto bg-secondary" id="markstable" hidden>
+
+    <tr>
+        <th>Subjects</th>    
+        <th>Marks Obtained</th>    
+        <th>Out of</th>
+    
+    </tr>
+ <tr>
+    <td>English</td>
+    <td id="seng"></td>
+    <td>100</td>
+ </tr>
+ <tr>
+    <td>Physics</td>
+    <td id="sphy"></td>
+    <td>100</td>
+ </tr>
+ <tr>
+    <td>Chemistry</td>
+    <td id="schem"></td>
+    <td>100</td>
+ </tr>
+ <tr>
+    <td>Maths</td>
+    <td id="smath"></td>
+    <td>100</td>
+ </tr>
+ <tr>
+    <td>Biology</td>
+    <td id="sbio"></td>
+    <td>100</td>
+ </tr>
+ <tr class="bg-dark">
+    <td>Total</td>
+    <td id="tmark">0</td>
+    <td>500</td>
+ </tr>
+ <tr class="bg-success">
+    <td>Percentage</td>
+    <td>=</td>
+    <td id="percent">%</td>
+ </tr>
+ <br>   
+
+</table>
+    
+
+    <script>
+        function handleclick(){
+            var val=document.getElementById('details').value;
+            console.log(val)
+            if(val==01){
+                document.getElementById('Profile').src="img/shirt3.webp";
+                document.getElementById('name').innerHTML="Aditya Pohane"
+                document.getElementById('rn').innerHTML="01"
+                document.getElementById('dob').innerHTML="11/02/2000"
+                document.getElementById("maincontainer").hidden=false
+                
+               
+
+            }
+            if(val==02){
+                document.getElementById('Profile').src="img/shirt2.jpg";
+                document.getElementById('name').innerHTML="Sanshank sahu"
+                document.getElementById('rn').innerHTML="02"
+                document.getElementById('dob').innerHTML="25/11/2002"
+                document.getElementById("maincontainer").hidden=false
+               
+
+            }
+            if(val==03){
+                document.getElementById('Profile').src="img/tahirt3.webp";
+                document.getElementById('name').innerHTML="Aniket marudkar"
+                document.getElementById('rn').innerHTML="03"
+                document.getElementById('dob').innerHTML="08/07/2001"
+                document.getElementById("maincontainer").hidden=false
+            }       
+        }
+
+
+        function Calculate(){
+            document.getElementById('markstable').hidden=false
+
+            let eng=parseInt(document.getElementById('eng').value);
+            let phy=parseInt(document.getElementById('phy').value);
+            let chem=parseInt(document.getElementById('chem').value);
+            let math=parseInt(document.getElementById('maths').value);
+            let bio=parseInt(document.getElementById('bio').value);
+
+            document.getElementById('seng').innerHTML=eng;
+            document.getElementById('sphy').innerHTML=phy;
+            document.getElementById('schem').innerHTML=chem;
+            document.getElementById('smath').innerHTML=math;
+            document.getElementById('sbio').innerHTML=bio;
+        
+            let total=eng+phy+chem+math+bio;
+            document.getElementById('tmark').innerHTML=total
+            let per=(total/500)*100;
+            document.getElementById('percent').innerHTML=per+ "%"
+            console.log(total)
+
+        }
+        function mychange(){
+            document.getElementById('lastbtn').hidden=false
+        }
+    </script>
+</body>
+</html>

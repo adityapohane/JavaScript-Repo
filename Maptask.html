@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dropdown1</title>
+</head>
+
+<body>
+    <center>
+        <h1>Country Information</h1>
+
+        <select id="country" name="country" onclick="coun()">
+            <option value="">Select Your Country</option>
+            <option id="india">India</option>
+            <option id="usa">USA</option>
+        </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <select id="state" onclick="sta()">
+            <option value="">Select Your State</option>
+        </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <select name="city" id="city" onclick="handleclick()">
+            <option value="">Select Your City</option>
+        </select><br /><br /><br />
+
+        <!-- nagpur  -->
+        <div class="mapouter" id="ngpmap" hidden>
+            <div class="gmap_canvas">
+                <iframe width="770" height="510" id="gmap_canvas"
+                    src="https://maps.google.com/maps?q=nagpur&t=&z=10&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                    scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2yu.co">2yu</a><br />
+                <style>
+                    .mapouter {
+                        position: relative;
+                        text-align: right;
+                        height: 510px;
+                        width: 770px;
+                    }
+                </style><a href="https://embedgooglemap.2yu.co">html embed google map</a>
+                <style>
+                    .gmap_canvas {
+                        overflow: hidden;
+                        background: none !important;
+                        height: 510px;
+                        width: 770px;
+                    }
+                </style>
+            </div>
+        </div>
+        <!-- nagpurend  -->
+        <!-- pune  -->
+        <div class="mapouter" id="punemap" hidden>
+            <div class="gmap_canvas">
+                <iframe width="770" height="510" id="gmap_canvas"
+                    src="https://maps.google.com/maps?q=pune&t=&z=10&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                    scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2yu.co">2yu</a><br />
+                <style>
+                    .mapouter {
+                        position: relative;
+                        text-align: right;
+                        height: 510px;
+                        width: 770px;
+                    }
+                </style><a href="https://embedgooglemap.2yu.co">html embed google map</a>
+                <style>
+                    .gmap_canvas {
+                        overflow: hidden;
+                        background: none !important;
+                        height: 510px;
+                        width: 770px;
+                    }
+                </style>
+            </div>
+        </div>
+        <!-- puneend  -->
+        <!-- mumbai  -->
+        <div class="mapouter" id="mumbaimap" hidden>
+            <div class="gmap_canvas">
+                <iframe width="770" height="510" id="gmap_canvas"
+                    src="https://maps.google.com/maps?q=mumbai&t=&z=10&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                    scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2yu.co">2yu</a><br />
+                <style>
+                    .mapouter {
+                        position: relative;
+                        text-align: right;
+                        height: 510px;
+                        width: 770px;
+                    }
+                </style><a href="https://embedgooglemap.2yu.co">html embed google map</a>
+                <style>
+                    .gmap_canvas {
+                        overflow: hidden;
+                        background: none !important;
+                        height: 510px;
+                        width: 770px;
+                    }
+                </style>
+            </div>
+        </div>
+        <!-- mumbaiend  -->
+        <!-- amravati  -->
+        <div class="mapouter" id="amravatimap" hidden>
+            <div class="gmap_canvas">
+                <iframe width="770" height="510" id="gmap_canvas"
+                    src="https://maps.google.com/maps?q=amravati andra&t=&z=10&ie=UTF8&iwloc=&output=embed"
+                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+                    href="https://2yu.co">2yu</a><br />
+                <style>
+                    .mapouter {
+                        position: relative;
+                        text-align: right;
+                        height: 510px;
+                        width: 770px;
+                    }
+                </style><a href="https://embedgooglemap.2yu.co">html embed google map</a>
+                <style>
+                    .gmap_canvas {
+                        overflow: hidden;
+                        background: none !important;
+                        height: 510px;
+                        width: 770px;
+                    }
+                </style>
+            </div>
+        </div>
+        <!-- amravatiend  -->
+        <!-- Tirupati -->
+        <div class="mapouter" id="tirupatimap" hidden>
+            <div class="gmap_canvas">
+                <iframe width="770" height="510" id="gmap_canvas"
+                    src="https://maps.google.com/maps?q=tirupati&t=&z=10&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                    scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2yu.co">2yu</a><br />
+                <style>
+                    .mapouter {
+                        position: relative;
+                        text-align: right;
+                        height: 510px;
+                        width: 770px;
+                    }
+                </style><a href="https://embedgooglemap.2yu.co">html embed google map</a>
+                <style>
+                    .gmap_canvas {
+                        overflow: hidden;
+                        background: none !important;
+                        height: 510px;
+                        width: 770px;
+                    }
+                </style>
+            </div>
+        </div>
+        <!-- Tirupatiend  -->
+        <!-- bhopal  -->
+        <div class="mapouter" id="bhopalmap" hidden>
+            <div class="gmap_canvas">
+                <iframe width="770" height="510" id="gmap_canvas"
+                    src="https://maps.google.com/maps?q=bhopal&t=&z=10&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                    scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2yu.co">2yu</a><br />
+                <style>
+                    .mapouter {
+                        position: relative;
+                        text-align: right;
+                        height: 510px;
+                        width: 770px;
+                    }
+                </style><a href="https://embedgooglemap.2yu.co">html embed google map</a>
+                <style>
+                    .gmap_canvas {
+                        overflow: hidden;
+                        background: none !important;
+                        height: 510px;
+                        width: 770px;
+                    }
+                </style>
+            </div>
+        </div>
+        <!-- bhopalend  -->
+        <!-- indore  -->
+        <div class="mapouter" id="indoremap" hidden>
+            <div class="gmap_canvas">
+                <iframe width="770" height="510" id="gmap_canvas"
+                    src="https://maps.google.com/maps?q=indore&t=&z=10&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                    scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2yu.co">2yu</a><br />
+                <style>
+                    .mapouter {
+                        position: relative;
+                        text-align: right;
+                        height: 510px;
+                        width: 770px;
+                    }
+                </style><a href="https://embedgooglemap.2yu.co">html embed google map</a>
+                <style>
+                    .gmap_canvas {
+                        overflow: hidden;
+                        background: none !important;
+                        height: 510px;
+                        width: 770px;
+                    }
+                </style>
+            </div>
+        </div>
+        <!-- indoreend  -->
+        <!-- LAMAP -->
+        <div class="mapouter" id="LAmap" hidden>
+            <div class="gmap_canvas">
+                <iframe width="770" height="510" id="gmap_canvas"
+                    src="https://maps.google.com/maps?q=Los Angeles&t=&z=10&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                    scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2yu.co">2yu</a><br />
+                <style>
+                    .mapouter {
+                        position: relative;
+                        text-align: right;
+                        height: 510px;
+                        width: 770px;
+                    }
+                </style><a href="https://embedgooglemap.2yu.co">html embed google map</a>
+                <style>
+                    .gmap_canvas {
+                        overflow: hidden;
+                        background: none !important;
+                        height: 510px;
+                        width: 770px;
+                    }
+                </style>
+            </div>
+        </div>
+        <!-- LAMAPend -->
+        <!-- sonjose  -->
+        <div class="mapouter" id="SJmap" hidden>
+            <div class="gmap_canvas">
+                <iframe width="770" height="510" id="gmap_canvas"
+                    src="https://maps.google.com/maps?q=	San Jose&t=&z=10&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                    scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2yu.co">2yu</a><br />
+                <style>
+                    .mapouter {
+                        position: relative;
+                        text-align: right;
+                        height: 510px;
+                        width: 770px;
+                    }
+                </style><a href="https://embedgooglemap.2yu.co">html embed google map</a>
+                <style>
+                    .gmap_canvas {
+                        overflow: hidden;
+                        background: none !important;
+                        height: 510px;
+                        width: 770px;
+                    }
+                </style>
+            </div>
+        </div>
+        <!-- sonjose end  -->
+        <!-- Miami  -->
+        <div class="mapouter" id="miamimap" hidden>
+            <div class="gmap_canvas"><iframe width="770" height="510" id="gmap_canvas"
+                    src="https://maps.google.com/maps?q=miami&t=&z=10&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                    scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2yu.co">2yu</a><br>
+                <style>
+                    .mapouter {
+                        position: relative;
+                        text-align: right;
+                        height: 510px;
+                        width: 770px;
+                    }
+                </style><a href="https://embedgooglemap.2yu.co">html embed google map</a>
+                <style>
+                    .gmap_canvas {
+                        overflow: hidden;
+                        background: none !important;
+                        height: 510px;
+                        width: 770px;
+                    }
+                </style>
+            </div>
+        </div>
+        <!-- Miamimap  -->
+        <!-- tampa  -->
+        <div class="mapouter" id="tampamap" hidden>
+            <div class="gmap_canvas"><iframe width="770" height="510" id="gmap_canvas"
+                    src="https://maps.google.com/maps?q=tampa&t=&z=10&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                    scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2yu.co">2yu</a><br>
+                <style>
+                    .mapouter {
+                        position: relative;
+                        text-align: right;
+                        height: 510px;
+                        width: 770px;
+                    }
+                </style><a href="https://embedgooglemap.2yu.co">html embed google map</a>
+                <style>
+                    .gmap_canvas {
+                        overflow: hidden;
+                        background: none !important;
+                        height: 510px;
+                        width: 770px;
+                    }
+                </style>
+            </div>
+        </div>
+        <!-- tampaend  -->
+        <!-- Seattle  -->
+        <div class="mapouter" id="seattlemap" hidden>
+            <div class="gmap_canvas"><iframe width="770" height="510" id="gmap_canvas"
+                    src="https://maps.google.com/maps?q=seattle&t=&z=10&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                    scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2yu.co">2yu</a><br>
+                <style>
+                    .mapouter {
+                        position: relative;
+                        text-align: right;
+                        height: 510px;
+                        width: 770px;
+                    }
+                </style><a href="https://embedgooglemap.2yu.co">html embed google map</a>
+                <style>
+                    .gmap_canvas {
+                        overflow: hidden;
+                        background: none !important;
+                        height: 510px;
+                        width: 770px;
+                    }
+                </style>
+            </div>
+        </div>
+        <!-- Seattleend  -->
+        <!-- Spokane  -->
+        <div class="mapouter" id="spokanemap" hidden>
+            <div class="gmap_canvas"><iframe width="770" height="510" id="gmap_canvas"
+                    src="https://maps.google.com/maps?q=Spokane&t=&z=10&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                    scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2yu.co">2yu</a><br>
+                <style>
+                    .mapouter {
+                        position: relative;
+                        text-align: right;
+                        height: 510px;
+                        width: 770px;
+                    }
+                </style><a href="https://embedgooglemap.2yu.co">html embed google map</a>
+                <style>
+                    .gmap_canvas {
+                        overflow: hidden;
+                        background: none !important;
+                        height: 510px;
+                        width: 770px;
+                    }
+                </style>
+            </div>
+        </div>
+        <!-- Spokaneend  -->
+
+    </center>
+    <script>
+        function coun() {
+            let a = document.getElementById("country").value;
+            console.log(a);
+
+            if (a == "India") {
+                var array = [
+                    "Select Your State",
+                    "Maharashtra",
+                    "AndraPradesh",
+                    "Madhya Pradesh",
+                ];
+            } else if (a == "USA") {
+                var array = ["Califonia", "Florida", "Washingtong"];
+            } else {
+                var array = ["Choose Your State"];
+            }
+
+            var string = "";
+            for (i = 0; i < array.length; i++) {
+                string = string + "<option>" + array[i] + "</option>";
+                console.log(array[i]);
+            }
+            document.getElementById("state").innerHTML =
+                "<select>" + string + "</select>";
+            }
+                function sta() {
+            let b = document.getElementById("state").value;
+            // console.log(b);
+            if (b == "Maharashtra") {
+                var arrayc = ["Select Your City", "Nagpur", "Pune", "Mumbai"];
+            } else if (b == "AndraPradesh") {
+                var arrayc = ["Select Your City", "Amravati", "Tirupati"];
+            } else if (b == "Madhya Pradesh") {
+                var arrayc = ["Select Your City", "Bhopal", "Indore"];
+            } else if (b == "Califonia") {
+                var arrayc = ["Select Your City", "	Los Angeles", "San Jose"];
+                // document.getElementById("city1").innerHTML = b;
+            } else if (b == "Florida") {
+                var arrayc = ["Select Your City", "Miami", "	Tampa"];
+            } else if (b == "Washingtong") {
+                var arrayc = ["Select Your City", "Seattle", "Spokane"];
+            }
+
+            var string = "";
+            for (i = 0; i < arrayc.length; i++) {
+                string = string + "<option>" + arrayc[i] + "</option>";
+                console.log(string)
+            }
+            document.getElementById("city").innerHTML =
+                "<select>" + string + "</select>";
+        }
+        function handleclick() {
+            let c = document.getElementById("city").value;
+            console.log(c);
+
+            if (c == "Nagpur") {
+                document.getElementById("ngpmap").hidden = false;
+                document.getElementById("punemap").hidden = true;
+                document.getElementById("mumbaimap").hidden = true;
+                document.getElementById("tirupatimap").hidden = true;
+                document.getElementById("amravatimap").hidden = true;
+                document.getElementById("bhopalmap").hidden = true;
+                document.getElementById("indoremap").hidden = true;
+                document.getElementById("LAmap").hidden = true;
+                document.getElementById("SJmap").hidden = true;
+                document.getElementById("miamimap").hidden = true;
+                document.getElementById("tampamap").hidden = true;
+                document.getElementById("seattlemap").hidden = true;
+                document.getElementById("spokanemap").hidden = true;
+            }
+            if (c == "Pune") {
+                document.getElementById("punemap").hidden = false;
+                document.getElementById("ngpmap").hidden = true;
+                document.getElementById("mumbaimap").hidden = true;
+                document.getElementById("tirupatimap").hidden = true;
+                document.getElementById("amravatimap").hidden = true;
+                document.getElementById("bhopalmap").hidden = true;
+                document.getElementById("indoremap").hidden = true;
+                document.getElementById("LAmap").hidden = true;
+                document.getElementById("SJmap").hidden = true;
+                document.getElementById("miamimap").hidden = true;
+                document.getElementById("tampamap").hidden = true;
+                document.getElementById("seattlemap").hidden = true;
+                document.getElementById("spokanemap").hidden = true;
+            }
+            if (c == "Mumbai") {
+                document.getElementById("mumbaimap").hidden = false;
+                document.getElementById("ngpmap").hidden = true;
+                document.getElementById("punemap").hidden = true;
+                document.getElementById("tirupatimap").hidden = true;
+                document.getElementById("amravatimap").hidden = true;
+                document.getElementById("bhopalmap").hidden = true;
+                document.getElementById("indoremap").hidden = true;
+                document.getElementById("LAmap").hidden = true;
+                document.getElementById("SJmap").hidden = true;
+                document.getElementById("miamimap").hidden = true;
+                document.getElementById("tampamap").hidden = true;
+                document.getElementById("seattlemap").hidden = true;
+                document.getElementById("spokanemap").hidden = true;
+            }
+            if (c == "Amravati") {
+                document.getElementById("amravatimap").hidden = false;
+                document.getElementById("ngpmap").hidden = true;
+                document.getElementById("punemap").hidden = true;
+                document.getElementById("mumbaimap").hidden = true;
+                document.getElementById("tirupatimap").hidden = true;
+                document.getElementById("bhopalmap").hidden = true;
+                document.getElementById("indoremap").hidden = true;
+                document.getElementById("LAmap").hidden = true;
+                document.getElementById("SJmap").hidden = true;
+                document.getElementById("miamimap").hidden = true;
+                document.getElementById("tampamap").hidden = true;
+                document.getElementById("seattlemap").hidden = true;
+                document.getElementById("spokanemap").hidden = true;
+            }
+            if (c == "Tirupati") {
+                document.getElementById("tirupatimap").hidden = false;
+                document.getElementById("ngpmap").hidden = true;
+                document.getElementById("punemap").hidden = true;
+                document.getElementById("mumbaimap").hidden = true;
+                document.getElementById("amravatimap").hidden = true;
+                document.getElementById("bhopalmap").hidden = true;
+                document.getElementById("indoremap").hidden = true;
+                document.getElementById("LAmap").hidden = true;
+                document.getElementById("SJmap").hidden = true;
+                document.getElementById("miamimap").hidden = true;
+                document.getElementById("tampamap").hidden = true;
+                document.getElementById("seattlemap").hidden = true;
+                document.getElementById("spokanemap").hidden = true;
+            }
+            if (c == "Bhopal") {
+                document.getElementById("bhopalmap").hidden = false;
+                document.getElementById("ngpmap").hidden = true;
+                document.getElementById("punemap").hidden = true;
+                document.getElementById("mumbaimap").hidden = true;
+                document.getElementById("tirupatimap").hidden = true;
+                document.getElementById("amravatimap").hidden = true;
+                document.getElementById("indoremap").hidden = true;
+                document.getElementById("LAmap").hidden = true;
+                document.getElementById("SJmap").hidden = true;
+                document.getElementById("miamimap").hidden = true;
+                document.getElementById("tampamap").hidden = true;
+                document.getElementById("seattlemap").hidden = true;
+                document.getElementById("spokanemap").hidden = true;
+            }
+            if (c == "Indore") {
+                document.getElementById("indoremap").hidden = false;
+                document.getElementById("bhopalmap").hidden = true;
+                document.getElementById("ngpmap").hidden = true;
+                document.getElementById("punemap").hidden = true;
+                document.getElementById("mumbaimap").hidden = true;
+                document.getElementById("tirupatimap").hidden = true;
+                document.getElementById("amravatimap").hidden = true;
+                document.getElementById("LAmap").hidden = true;
+                document.getElementById("SJmap").hidden = true;
+                document.getElementById("miamimap").hidden = true;
+                document.getElementById("tampamap").hidden = true;
+                document.getElementById("seattlemap").hidden = true;
+                document.getElementById("spokanemap").hidden = true;
+            }
+            if (c == "Los Angeles") {
+                document.getElementById("LAmap").hidden = false;
+                document.getElementById("indoremap").hidden = true;
+                document.getElementById("bhopalmap").hidden = true;
+                document.getElementById("ngpmap").hidden = true;
+                document.getElementById("punemap").hidden = true;
+                document.getElementById("mumbaimap").hidden = true;
+                document.getElementById("tirupatimap").hidden = true;
+                document.getElementById("amravatimap").hidden = true;
+                document.getElementById("SJmap").hidden = true;
+                document.getElementById("miamimap").hidden = true;
+                document.getElementById("tampamap").hidden = true;
+                document.getElementById("seattlemap").hidden = true;
+                document.getElementById("spokanemap").hidden = true;
+            }
+            if (c == "	San Jose") {
+                document.getElementById("SJmap").hidden = false;
+                document.getElementById("LAmap").hidden = true;
+                document.getElementById("indoremap").hidden = true;
+                document.getElementById("bhopalmap").hidden = true;
+                document.getElementById("ngpmap").hidden = true;
+                document.getElementById("punemap").hidden = true;
+                document.getElementById("mumbaimap").hidden = true;
+                document.getElementById("tirupatimap").hidden = true;
+                document.getElementById("amravatimap").hidden = true;
+                document.getElementById("miamimap").hidden = true;
+                document.getElementById("tampamap").hidden = true;
+                document.getElementById("seattlemap").hidden = true;
+                document.getElementById("spokanemap").hidden = true;
+            }
+            if (c == "Miami") {
+                document.getElementById("miamimap").hidden = false;
+                document.getElementById("SJmap").hidden = true;
+                document.getElementById("LAmap").hidden = true;
+                document.getElementById("indoremap").hidden = true;
+                document.getElementById("bhopalmap").hidden = true;
+                document.getElementById("ngpmap").hidden = true;
+                document.getElementById("punemap").hidden = true;
+                document.getElementById("mumbaimap").hidden = true;
+                document.getElementById("tirupatimap").hidden = true;
+                document.getElementById("amravatimap").hidden = true;
+                document.getElementById("tampamap").hidden = true;
+                document.getElementById("seattlemap").hidden = true;
+                document.getElementById("spokanemap").hidden = true;
+            }
+            if (c == "Tampa") {
+                document.getElementById("tampamap").hidden = false;
+                document.getElementById("miamimap").hidden = true;
+                document.getElementById("SJmap").hidden = true;
+                document.getElementById("LAmap").hidden = true;
+                document.getElementById("indoremap").hidden = true;
+                document.getElementById("bhopalmap").hidden = true;
+                document.getElementById("ngpmap").hidden = true;
+                document.getElementById("punemap").hidden = true;
+                document.getElementById("mumbaimap").hidden = true;
+                document.getElementById("tirupatimap").hidden = true;
+                document.getElementById("amravatimap").hidden = true;
+                document.getElementById("seattlemap").hidden = true;
+                document.getElementById("spokanemap").hidden = true;
+            }
+            if (c == "Seattle") {
+                document.getElementById("seattlemap").hidden = false;
+                document.getElementById("tampamap").hidden = true;
+                document.getElementById("miamimap").hidden = true;
+                document.getElementById("SJmap").hidden = true;
+                document.getElementById("LAmap").hidden = true;
+                document.getElementById("indoremap").hidden = true;
+                document.getElementById("bhopalmap").hidden = true;
+                document.getElementById("ngpmap").hidden = true;
+                document.getElementById("punemap").hidden = true;
+                document.getElementById("mumbaimap").hidden = true;
+                document.getElementById("tirupatimap").hidden = true;
+                document.getElementById("amravatimap").hidden = true;
+                document.getElementById("spokanemap").hidden = true;
+            }
+            if (c == "Spokane") {
+                document.getElementById("spokanemap").hidden = false;
+                document.getElementById("seattlemap").hidden = true;
+                document.getElementById("tampamap").hidden = true;
+                document.getElementById("miamimap").hidden = true;
+                document.getElementById("SJmap").hidden = true;
+                document.getElementById("LAmap").hidden = true;
+                document.getElementById("indoremap").hidden = true;
+                document.getElementById("bhopalmap").hidden = true;
+                document.getElementById("ngpmap").hidden = true;
+                document.getElementById("punemap").hidden = true;
+                document.getElementById("mumbaimap").hidden = true;
+                document.getElementById("tirupatimap").hidden = true;
+                document.getElementById("amravatimap").hidden = true;
+            }
+        }
+    </script>
+</body>
+
+</html>

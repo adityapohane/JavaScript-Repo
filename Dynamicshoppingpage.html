@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dynamic web page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body >
+    <br><br><br>            
+
+    <div class="row ms-5">
+    <select name="select" id="selshow" class="form-control w-25 shadow"  onclick="handelclick()">
+
+        <option value="" >Categories</option>
+        <option value="Pants" id="pants">Pants</option>
+        <option value="Shirts" id="shirts">Shirts</option>
+        <option value="T-shirts" id="tshirts">T-shirts</option>
+    </select> 
+  
+  
+    </div>
+<br><br><br>
+
+    <div class="container d-flex justify-content-between" >
+
+        <div class="card shadow" style="width: 18rem;" id="div1">
+            <img id="showimage" width="200px" width="200px"   class="img-fluid card-img-top" >
+            <div class="card-body">
+              <h5 class="card-title" id="cardheading1">Peter England</h5 >
+                <hr>
+              <h6  id="brand1">Formals</h6>
+              <p class="text-danger" id="price">$28</p>
+            </div>
+      
+            <button class="btn btn-danger w-25 ms-4 mb-4 " onclick="handelclick2()">cart</button>
+          </div>
+
+          <div class="card shadow" style="width: 18rem;"  id="div2" >
+            <img id="showimage2" width="200px" width="200px"   class="img-fluid card-img-top" >
+            <div class="card-body">
+              <h5 class="card-title" id="cardheading2">Peter England</h5 >
+                <hr>
+              <h6  id="brand2">Formals</h6>
+              <p class="text-danger" id="price">$55</p>
+            </div> 
+          
+            <button class="btn btn-danger w-25 ms-4 mb-4"  onclick="handelclick2()">cart</button>
+          </div>
+
+          <div class="card shadow" style="width: 18rem;"  id="div3">
+            <img id="showimage3" width="200px" width="200px"   class="img-fluid card-img-top" >
+            <div class="card-body">
+              <h5 class="card-title" id="cardheading3">Peter England </h5 >
+                <hr>
+              <h6  id="brand3">Loose Fit</h6>
+              <p class="text-danger" id="price">$33</p>
+            </div>
+         
+          <br>    
+          <button class="btn btn-danger w-25 ms-4 mb-4"  onclick="handelclick2()">cart</button>
+          </div>
+
+       
+
+    </div>
+    <br><br>
+           
+
+    <div id="billdiv" class="container shadow-lg text-dark billing w-50">
+      <img id="billimage" width="300px" height="300px">
+      <br><br>
+      <div class="row">
+       <div class="col-6">
+        <p>Price</p>
+       </div>
+       <div class="col-6 text-end">
+        <p class="text-danger" id="bp">$ 55</p>
+       </div>
+       </div>
+      <div class="row">
+       <div class="col-6">
+        <p>Delivery Charges</p>
+       </div>
+       <div class="col-6 text-end">
+        <p class="text-danger">$ 2</p>
+       </div>
+       </div>
+       <div class="row ">
+        <div class="col-12 text-center">
+         <button class="btn bg-danger-subtle"  onclick="decreament()" >-</button>
+         <input type="number" value="1" width="" id="cartinput1">
+         <button class="btn bg-danger-subtle"  onclick="increament()">+</button>
+        </div>
+    </div>
+      <div class="row">
+       <div class="col-6">
+        <p> Total Price</p>
+       </div>
+       <div class="col-6 text-end">
+        <p class="text-danger" id="tp">$ 57</p>
+       </div>
+       </div>
+       <br><br>
+
+       <div class="row">
+     
+          <center><button class="btn btn-danger w-25"  >Buy Now</button></center>
+     
+       </div>
+       <br><br>
+        
+      </div>
+      
+  
+
+     
+
+
+    <script>
+        
+      
+
+        function handelclick()
+            {
+                 var p=document.getElementById('selshow').value;
+
+       
+                if (p=="Pants") 
+                {   
+                    document.getElementById('showimage').src="img/pants.webp";
+                    document.getElementById('showimage2').src="img/pant2.webp";
+                    document.getElementById('showimage3').src="img/pant3.jfif";
+                    document.getElementById("div1").hidden=false
+                    document.getElementById("div2").hidden=false
+                    document.getElementById("div3").hidden=false
+
+                    document.getElementById('billimage').src="img/pant2.webp";
+                    document.getElementById("billdiv").hidden=false
+                
+                }
+
+               
+                if (p=="Shirts") 
+                {   
+                    document.getElementById('showimage').src="img/shirt1.jfif";
+                    document.getElementById('showimage2').src="img/shirt2.jpg";
+                    document.getElementById('showimage3').src="img/shirt3.webp";
+                    document.getElementById("div1").hidden=false
+                    document.getElementById("div2").hidden=false
+                    document.getElementById("div3").hidden=false
+                   
+                    document.getElementById('brand1').innerHTML="Full Sleeves Dark Blue"
+                    document.getElementById('brand2').innerHTML="Full Sleeves Black With Printed chest-pocket"
+                    document.getElementById('brand3').innerHTML="Formal Full Sleeve Metallic Blue Tshirt"
+
+                    document.getElementById('billimage').src="img/shirt2.jpg";
+                    document.getElementById("billdiv").hidden=false
+                 
+                    
+                  
+
+                }
+                if (p=="T-shirts") 
+                {   
+                    document.getElementById('showimage').src="img/tshirts.webp";
+                    document.getElementById('showimage2').src="img/tshirt2.webp";
+                    document.getElementById('showimage3').src="img/tahirt3.webp";
+                    document.getElementById("div1").hidden=false
+                    document.getElementById("div2").hidden=false
+                    document.getElementById("div3").hidden=false
+
+                    document.getElementById('brand1').innerHTML="Round-neck green printed tshirt xxl"
+                    document.getElementById('brand2').innerHTML="Round-neck red fit s"
+                    document.getElementById('brand3').innerHTML="Round-neck white xl"
+
+                    document.getElementById('billimage').src="img/tshirt2.webp";
+                    document.getElementById("billdiv").hidden=false
+                    
+                }
+              
+             }
+             var p=document.getElementById('selshow').value;
+             if(p==""){
+              
+              document.getElementById("div1").hidden=true
+              document.getElementById("div2").hidden=true
+              document.getElementById("div3").hidden=true
+             }
+
+             function increament(){
+              
+              document.getElementById('cartinput1').stepUp();
+              var qq=parseInt(document.getElementById('cartinput1').value);
+              var bsp=parseInt("55")
+              
+              console.log(bsp)
+              document.getElementById('bp').innerHTML="$"+(bsp*qq)
+              document.getElementById('tp').innerHTML="$"+(bsp*qq+2)
+
+
+
+            
+             }
+             function decreament(){
+              
+              document.getElementById('cartinput1').stepDown();
+              var qq=parseInt(document.getElementById('cartinput1').value);
+              var bsp=parseInt("55")
+              document.getElementById('bp').innerHTML="$"+(bsp*qq-55)
+              document.getElementById('tp').innerHTML="$"+(bsp*qq+2-55)
+          
+             }
+
+          
+
+
+     
+       
+
+
+
+        
+
+    </script>
+    <br><br><br><br><br>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!-- age = (years × 365) + (months × 31) + days. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary task</title>
+   
+</head>
+<body class="bg-secondary">
+    <br><br><br><br><br>
+    <center>
+            <div style="float: left;margin-left: 400px;">
+
+                <label for="">Full name</label>
+                <input type="text" id="name" class="form-control"><br><br>
+   
+                <label for="" class="form-label">Employee type </label>
+                <select name="type" id="emplytype" class="form-control">
+                    <option value="type">Choose Employee type</option>
+                    <option value="Manager">Manager</option>
+                    <option value="Sales">Sales</option>
+                    <option value="Executive">Executive</option>
+                    <option value="Labour">Labour</option>
+                </select><br><br>
+
+                <label for="" class="form-label">Start Date</label>
+                <input type="date" id="startdate" class="form-control ">
+                <br><br>
+                
+                <label for="" class="form-label ">End Date</label>
+                <input type="date" id="enddate" class="form-control ">
+                <br><br>
+     
+            <label for="">leaves</label>
+            <input type="text" class="form-control" id="leaves"><br>
+            <button type="button" class="btn btn-danger  w-50" onclick="calculate()">Submit</button>
+            <br><br>
+  
+          <br><br><br>
+
+          <div style="display:inline;">
+                <p>Name:</p><p id="fullname"></p>
+            </div>
+            <p> Employee type:</p><p id="type"></p>
+            <p >Daily Wages</p><p id="perday"></p>
+            <p> Total Working days</p><p id="work"></p>
+            <p>leaves</p><p id="leave"></p>
+            <p>Salary</p><p id="salary"></p>
+        
+        </div>
+    </center>
+        <script>
+            function calculate(){
+                
+                var name=document.getElementById('name').value.toString();
+                let etype=document.getElementById('emplytype').value;
+
+                let startdate=new Date(document.getElementById('startdate').value);
+                let enddate=new Date(document.getElementById('enddate').value);
+                
+                let leaves=document.getElementById('leaves').value;
+                
+                let day=enddate.getTime() - startdate.getTime() ;
+                let totaldays= day /(1000*24*3600);
+                console.log(totaldays);
+                  
+                if(etype=="Manager"){
+           
+                    document.getElementById('fullname').innerHTML=name;
+                    document.getElementById('type').innerHTML=etype;
+                    document.getElementById('work').innerHTML=totaldays;
+            document.getElementById('leave').innerHTML=leaves;
+            document.getElementById('salary').innerHTML=(totaldays*1200-(leaves*1200 ));
+            document.getElementById('perday').innerHTML="1200/day"
+
+        }
+        else if(etype=="Sales"){
+            console.log(totaldays*800-(leaves*800 ));
+            document.getElementById('fullname').innerHTML=name;
+            document.getElementById('type').innerHTML=etype;
+            document.getElementById('work').innerHTML=totaldays;
+            document.getElementById('leave').innerHTML=leaves;
+            document.getElementById('salary').innerHTML=(totaldays*800-(leaves*800 ));
+            document.getElementById('perday').innerHTML="800/day"
+        }
+
+        else if(etype=="Executive"){
+            console.log(totaldays*500-(leaves*500 ));
+            document.getElementById('fullname').innerHTML=name;
+            document.getElementById('type').innerHTML=etype;
+            document.getElementById('work').innerHTML=totaldays;
+            document.getElementById('leave').innerHTML=leaves;
+            document.getElementById('salary').innerHTML=(totaldays*500-(leaves*500 ));
+            document.getElementById('perday').innerHTML="500/day"
+        }
+        else if(etype=="Labour"){
+            console.log(totaldays*300-(leaves*300 ));
+            document.getElementById('fullname').innerHTML=name;
+            document.getElementById('type').innerHTML=etype;
+            document.getElementById('work').innerHTML=totaldays;
+            document.getElementById('leave').innerHTML=leaves;
+            document.getElementById('salary').innerHTML=(totaldays*500-(leaves*500 ));
+            document.getElementById('perday').innerHTML="300/day"
+        }
+    }
+   </script>
+</body>
+</html>
